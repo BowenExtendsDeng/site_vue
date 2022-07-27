@@ -1,19 +1,21 @@
 <template>
   <div id="loginpage">
     <MenuBar></MenuBar>
-    <HomePageCarousel></HomePageCarousel>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import MenuBar from './MenuBar.vue'
-import HomePageCarousel from './HomePageCarousel.vue'
+import router from '@/routers'
 
 export default {
   name: 'HomePage',
   components: {
-    MenuBar,
-    HomePageCarousel
+    MenuBar
+  },
+  mounted() {
+    router.push({name: "HomePageCarousel"});
   }
 }
 </script>

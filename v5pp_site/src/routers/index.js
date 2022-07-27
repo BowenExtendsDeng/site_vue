@@ -9,7 +9,45 @@ const router = new VueRouter({
             meta: {
                 title: 'homepage',
                 isAuth: false
-            }
+            },
+            children: [
+                {
+                    name: 'HomePageIntro',
+                    path: 'intro',
+                    component: () => import('../components/HomepageIntro.vue'),
+                    meta: {
+                        title: 'intro',
+                        isAuth: false
+                    }
+                },
+                {
+                    name: 'HomePageCarousel',
+                    path: 'carousel',
+                    component: () => import('../components/HomePageCarousel.vue'),
+                    meta: {
+                        title: 'carousel',
+                        isAuth: false
+                    }
+                },
+                {
+                    name: 'StructureOverview',
+                    path: 'structure',
+                    component: () => import('../components/StructureOverview.vue'),
+                    meta: {
+                        title: 'structure',
+                        isAuth: false
+                    }
+                },
+                {
+                    name: 'PptProjector',
+                    path: 'ppt/:imageDirPath/:amount',
+                    component: () => import('../components/PptProjector.vue'),
+                    meta: {
+                        title: 'ppt',
+                        isAuth: false
+                    }
+                }
+            ]
         },
         {
             name: 'Login',

@@ -10,6 +10,6 @@ Vue.use(ElementUI)
 Vue.use(VueRouter)
 
 new Vue({
-  render: h => h(App),
-  router: router
+    render: h => h(App),
+    router: router
 }).$mount('#app')

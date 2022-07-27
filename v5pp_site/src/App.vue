@@ -28,35 +28,35 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 .el-footer {
   background-color: #B3C0D1;
   color: #333;
   text-align: center;
-  line-height: 60px;
+  line-height: 50px;
 }
 
 .el-main {
   background-color: #E9EEF3;
   color: #333;
   text-align: center;
-  line-height: 160px;
+  line-height: 10px;
 }
 
-body>.el-container {
-  margin-bottom: 40px;
+body > .el-container {
+  margin-bottom: 10px;
 }
 
 .el-container:nth-child(5) .el-aside,
 .el-container:nth-child(6) .el-aside {
-  line-height: 260px;
+  line-height: 10px;
 }
 
 .el-container:nth-child(7) .el-aside {
-  line-height: 320px;
+  line-height: 10px;
 }
 </style>
