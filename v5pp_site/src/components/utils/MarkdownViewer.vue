@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import Shiro from '../assets/md/Shiro.md'
+import Shiro from '../../assets/md/Shiro.md'
 
 export default {
   components: {

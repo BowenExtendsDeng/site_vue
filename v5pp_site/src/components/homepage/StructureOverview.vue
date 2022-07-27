@@ -1,6 +1,6 @@
 <template>
   <div class="img">
-    <img src="../assets/structure.png" alt="组织架构图">
+    <img src="../../assets/structure.png" alt="组织架构图">
   </div>
 </template>
 

@@ -6,7 +6,7 @@
 </template>
 <script>
 import router from '@/routers';
-import UserBar from './UserBar.vue';
+import UserBar from '../UserBar.vue';
 export default {
     name: 'LoginPage',
     components: {

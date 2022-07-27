@@ -5,7 +5,7 @@ const router = new VueRouter({
         {
             name: 'HomePage',
             path: '/',
-            component: () => import('../components/HomePage.vue'),
+            component: () => import('../components/homepage/HomePage.vue'),
             meta: {
                 title: 'homepage',
                 isAuth: false
@@ -23,7 +23,7 @@ const router = new VueRouter({
                 {
                     name: 'HomePageCarousel',
                     path: 'carousel',
-                    component: () => import('../components/HomePageCarousel.vue'),
+                    component: () => import('../components/homepage/HomePageCarousel.vue'),
                     meta: {
                         title: 'carousel',
                         isAuth: false
@@ -32,7 +32,7 @@ const router = new VueRouter({
                 {
                     name: 'StructureOverview',
                     path: 'structure',
-                    component: () => import('../components/StructureOverview.vue'),
+                    component: () => import('../components/homepage/StructureOverview.vue'),
                     meta: {
                         title: 'structure',
                         isAuth: false
@@ -151,7 +151,7 @@ const router = new VueRouter({
         {
             name: 'UserPage',
             path: '/user',
-            component: () => import('../components/UserPage.vue'),
+            component: () => import('../components/user/UserPage.vue'),
             meta: {
                 title: 'userpage',
                 isAuth: true
@@ -160,7 +160,7 @@ const router = new VueRouter({
                 {
                     name: 'UserInfo',
                     path: 'info',
-                    component: () => import('../components/UserInfo.vue'),
+                    component: () => import('../components/user/UserInfo.vue'),
                     meta: {
                         title: 'userinfo',
                         isAuth: true
@@ -169,7 +169,7 @@ const router = new VueRouter({
                 {
                     name: 'UserPhoneBook',
                     path: 'phonebook',
-                    component: () => import('../components/UserPhoneBook.vue'),
+                    component: () => import('../components/user/UserPhoneBook.vue'),
                     meta: {
                         title: 'userphonebook',
                         isAuth: true
@@ -178,7 +178,7 @@ const router = new VueRouter({
                 {
                     name: 'budgetOverview',
                     path: 'budgetOverview',
-                    component: () => import('../components/BudgetOverview.vue'),
+                    component: () => import('../components/budget/BudgetOverview.vue'),
                     meta: {
                         title: 'budget',
                         isAuth: true
@@ -187,7 +187,7 @@ const router = new VueRouter({
                 {
                     name: 'budgetApplication',
                     path: 'budgetApplication',
-                    component: () => import('../components/BudgetApplication.vue'),
+                    component: () => import('../components/budget/BudgetApplication.vue'),
                     meta: {
                         title: 'budgetApplication',
                         isAuth: true
@@ -196,7 +196,7 @@ const router = new VueRouter({
                 {
                     name: 'uploadBill',
                     path: 'uploadBill',
-                    component: () => import('../components/UploadBill.vue'),
+                    component: () => import('../components/budget/UploadBill.vue'),
                     meta: {
                         title: 'uploadBill',
                         isAuth: true
@@ -205,7 +205,7 @@ const router = new VueRouter({
                 {
                     name: 'receiveBudget',
                     path: 'receiveBudget',
-                    component: () => import('../components/ReceiveBudget.vue'),
+                    component: () => import('../components/budget/ReceiveBudget.vue'),
                     meta: {
                         title: 'receiveBudget',
                         isAuth: true
@@ -214,7 +214,7 @@ const router = new VueRouter({
                 {
                     name: 'UserSettings',
                     path: 'settings',
-                    component: () => import('../components/UserSettings.vue'),
+                    component: () => import('../components/user/UserSettings.vue'),
                     meta: {
                         title: 'settings',
                         isAuth: true

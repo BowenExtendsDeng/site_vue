@@ -5,15 +5,15 @@
             </el-table-column>
             <el-table-column prop="name" label="姓名" width="180">
             </el-table-column>
-            <el-table-column prop="grade" label="地址">
+            <el-table-column prop="grade" label="年级">
             </el-table-column>
-            <el-table-column prop="major" label="地址">
+            <el-table-column prop="major" label="专业">
             </el-table-column>
-            <el-table-column prop="phone" label="地址">
+            <el-table-column prop="phone" label="电话">
             </el-table-column>
-            <el-table-column prop="email" label="地址">
+            <el-table-column prop="email" label="邮箱">
             </el-table-column>
-            <el-table-column prop="sex" label="地址">
+            <el-table-column prop="sex" label="性别">
             </el-table-column>
         </el-table>
     </div>
