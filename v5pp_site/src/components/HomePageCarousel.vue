@@ -1,5 +1,5 @@
 <template>
-  <el-carousel :interval="4000" type="card" height="560px">
+  <el-carousel :interval="4000" type="card" height="500px">
     <el-carousel-item v-for="item in 3" :key="item">
       <h3 class="medium">{{ item }}</h3>
     </el-carousel-item>
@@ -7,9 +7,7 @@
 </template>
 
 <script>
-export default ({
-
-})
+export default ({})
 </script>
 
 

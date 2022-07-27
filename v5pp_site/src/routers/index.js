@@ -46,6 +46,51 @@ const router = new VueRouter({
                         title: 'userphonebook',
                         isAuth: true
                     }
+                },
+                {
+                    name: 'budgetOverview',
+                    path: 'budgetOverview',
+                    component: () => import('../components/BudgetOverview.vue'),
+                    meta: {
+                        title: 'budget',
+                        isAuth: true
+                    }
+                },
+                {
+                    name: 'budgetApplication',
+                    path: 'budgetApplication',
+                    component: () => import('../components/BudgetApplication.vue'),
+                    meta: {
+                        title: 'budgetApplication',
+                        isAuth: true
+                    }
+                },
+                {
+                    name: 'uploadBill',
+                    path: 'uploadBill',
+                    component: () => import('../components/UploadBill.vue'),
+                    meta: {
+                        title: 'uploadBill',
+                        isAuth: true
+                    }
+                },
+                {
+                    name: 'receiveBudget',
+                    path: 'receiveBudget',
+                    component: () => import('../components/ReceiveBudget.vue'),
+                    meta: {
+                        title: 'receiveBudget',
+                        isAuth: true
+                    }
+                },
+                {
+                    name: 'UserSettings',
+                    path: 'settings',
+                    component: () => import('../components/UserSettings.vue'),
+                    meta: {
+                        title: 'settings',
+                        isAuth: true
+                    }
                 }
             ]
         }
