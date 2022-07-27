@@ -1,37 +1,37 @@
 <template>
-  <div>
-    <img :src="require(imagePath[index])" alt="logo" width="100%" id="ppt" v-for="index in amount"
-         :key="index">
+  <div class="demo-image__placeholder">
+    <div class="block">
+      <el-image :src="src[index - 1]" v-for="index in size" :key="index"></el-image>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "PptProjector",
   data() {
     return {
-      amount: 0,
-      imagePath: []
+      size:0,
+      src: [],
+      prefix:'https://tomcat-oss.oss-cn-beijing.aliyuncs.com/v5ppAssets/',
+      imgPath:''
     }
   },
-  methods: {},
-  computed: {},
+  props:{
+    path:{
+      type: String,
+      default: ''
+    },
+    amount:{
+      type: String,
+      default: ''
+    }
+  },
   mounted() {
-    this.amount = this.$route.params.amount;
+    this.size = parseInt(this.amount);
+    this.imgPath = this.prefix + this.path + '/';
     for (let i = 1; i <= this.amount; i++) {
-      this.imagePath.push(this.$route.params.imageDirPath + "/" + i + '.PNG');
+      this.src.push(this.imgPath + i + '.PNG');
     }
-    alert(this.imagePath);
-  },
+  }
 }
 </script>
-
-<style scoped>
-div {
-  width: 60%;
-  height: 60%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-</style>

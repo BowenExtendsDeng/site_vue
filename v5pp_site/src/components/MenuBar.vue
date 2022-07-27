@@ -23,9 +23,9 @@
       </el-submenu>
       <el-submenu index="6">
         <template slot="title">招 新 考 核</template>
-        <el-menu-item index="6-1" style="font-weight: bold;">软 件 组 考 核</el-menu-item>
-        <el-menu-item index="6-4" style="font-weight: bold;">硬 件 组 考 核</el-menu-item>
-        <el-menu-item index="6-5" style="font-weight: bold;">机 械 组 考 核</el-menu-item>
+        <el-menu-item index="6-1" style="font-weight: bold;" disabled>软 件 组 考 核</el-menu-item>
+        <el-menu-item index="6-4" style="font-weight: bold;" disabled>硬 件 组 考 核</el-menu-item>
+        <el-menu-item index="6-5" style="font-weight: bold;" disabled>机 械 组 考 核</el-menu-item>
       </el-submenu>
       <div style="float:left;background-color:rgb(220, 230, 256);font-weight: bold;">
         <el-menu-item index="7">加 入 我 们</el-menu-item>
@@ -66,103 +66,37 @@ export default {
       this.$router.push({name: 'StructureOverview'});
     },
     toV5() {
-      this.$router.push({
-        name: 'PptProjector',
-        params: {
-          imageDirPath: '../assets/department/v5',
-          amount: 29
-        }
-      });
+      this.$router.push({name: 'V5Pro'});
     },
     toFish() {
-      this.$router.push({
-        name: 'PptProjector',
-        params: {
-          imageDirPath: '../assets/department/fish',
-          amount: 9
-        }
-      });
+      this.$router.push({name: 'FishPro'});
     },
     toWheel() {
-      this.$router.push({
-        name: 'PptProjector',
-        params: {
-          imageDirPath: '../assets/department/wheel',
-          amount: 19
-        }
-      });
+      this.$router.push({name: 'WheelPro'});
     },
     toStandard() {
-      this.$router.push({
-        name: 'PptProjector',
-        params: {
-          imageDirPath: '../assets/department/standard',
-          amount: 9
-        }
-      });
+      this.$router.push({name: 'StandardPro'});
     },
     toHuman() {
-      this.$router.push({
-        name: 'PptProjector',
-        params: {
-          imageDirPath: '../assets/department/human',
-          amount: 19
-        }
-      })
+      this.$router.push({name: 'HumanPro'});
     },
     toDouble() {
-      this.$router.push({
-        name: 'PptProjector',
-        params: {
-          imageDirPath: '../assets/department/double',
-          amount: 5
-        }
-      })
+      this.$router.push({name: 'DoublePro'});
     },
     toVision() {
-      this.$router.push({
-        name: 'PptProjector',
-        params: {
-          imageDirPath: '../assets/tech/vision',
-          amount: 1
-        }
-      })
+      this.$router.push({name: 'VisionPro'});
     },
     toStrategy() {
-      this.$router.push({
-        name: 'PptProjector',
-        params: {
-          imageDirPath: '../assets/tech/strategy',
-          amount: 1
-        }
-      })
+      this.$router.push({name: 'StrategyPro'});
     },
     toNavi() {
-      this.$router.push({
-        name: 'PptProjector',
-        params: {
-          imageDirPath: '../assets/tech/navi',
-          amount: 1
-        }
-      })
+      this.$router.push({name: 'NaviPro'});
     },
     toHardware() {
-      this.$router.push({
-        name: 'PptProjector',
-        params: {
-          imageDirPath: '../assets/tech/hardware',
-          amount: 1
-        }
-      })
+      this.$router.push({name: 'HardwarePro'});
     },
     toMach() {
-      this.$router.push({
-        name: 'PptProjector',
-        params: {
-          imageDirPath: '../assets/tech/mach',
-          amount: 1
-        }
-      })
+      this.$router.push({name: 'MachPro'});
     }
   }
 }

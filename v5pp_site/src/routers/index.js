@@ -14,7 +14,7 @@ const router = new VueRouter({
                 {
                     name: 'HomePageIntro',
                     path: 'intro',
-                    component: () => import('../components/HomepageIntro.vue'),
+                    component: () => import('../components/PPT/IntroPro'),
                     meta: {
                         title: 'intro',
                         isAuth: false
@@ -39,11 +39,101 @@ const router = new VueRouter({
                     }
                 },
                 {
-                    name: 'PptProjector',
-                    path: 'ppt/:imageDirPath/:amount',
-                    component: () => import('../components/PptProjector.vue'),
+                    name:'V5Pro',
+                    path: 'v5',
+                    component: () => import('../components/PPT/V5Pro'),
                     meta: {
-                        title: 'ppt',
+                        title: 'v5',
+                        isAuth: false
+                    }
+                },
+                {
+                    name:'WheelPro',
+                    path: 'wheel',
+                    component: () => import('../components/PPT/WheelPro'),
+                    meta: {
+                        title: 'wheel',
+                        isAuth: false
+                    }
+                },
+                {
+                    name:'HumanPro',
+                    path: 'human',
+                    component: () => import('../components/PPT/HumanPro'),
+                    meta: {
+                        title: 'human',
+                        isAuth: false
+                    }
+                },
+                {
+                    name:'FishPro',
+                    path: 'fish',
+                    component: () => import('../components/PPT/FishPro'),
+                    meta: {
+                        title: 'fish',
+                        isAuth: false
+                    }
+                },
+                {
+                    name:'StandardPro',
+                    path: 'standard',
+                    component: () => import('../components/PPT/StandardPro'),
+                    meta: {
+                        title: 'standard',
+                        isAuth: false
+                    }
+                },
+                {
+                    name:'NaviPro',
+                    path: 'navi',
+                    component: () => import('../components/PPT/NaviPro'),
+                    meta: {
+                        title: 'navi',
+                        isAuth: false
+                    }
+                },
+                {
+                    name:'VisionPro',
+                    path: 'vision',
+                    component: () => import('../components/PPT/VisionPro'),
+                    meta: {
+                        title: 'vision',
+                        isAuth: false
+                    }
+                },
+                {
+                    name:'StrategyPro',
+                    path: 'strategy',
+                    component: () => import('../components/PPT/StrategyPro'),
+                    meta: {
+                        title: 'strategy',
+                        isAuth: false
+                    }
+                },
+                {
+                    name:'HardwarePro',
+                    path: 'hardware',
+                    component: () => import('../components/PPT/HardwarePro'),
+                    meta: {
+                        title: 'hardware',
+                        isAuth: false
+                    }
+                },
+                {
+                    name:'MachPro',
+                    path: 'mach',
+                    component: () => import('../components/PPT/MachPro'),
+                    meta: {
+                        title: 'mach',
+                        isAuth: false
+                    }
+                },
+                {
+                    name:'DoublePro',
+                    path: 'double',
+                    component: () => import('../components/PPT/DoublePro'),
+                    meta: {
+                        title: 'double',
                         isAuth: false
                     }
                 }

@@ -7,7 +7,7 @@
       <el-main>
         <router-view></router-view>
       </el-main>
-      <el-footer>Footer</el-footer>
+      <el-footer>@2003-2022足球机器人创新实践基地版权所有：<a href="https://beian.miit.gov.cn/" target="_blank">您的备案号</a></el-footer>
     </el-container>
   </div>
 </template>
