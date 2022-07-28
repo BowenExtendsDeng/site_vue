@@ -39,7 +39,25 @@ const router = new VueRouter({
                     }
                 },
                 {
-                    name:'V5Pro',
+                    name: 'JoinUs',
+                    path: 'join_us',
+                    component: () => import('../components/JoinUs.vue'),
+                    meta: {
+                        title: 'join_us',
+                        isAuth: false
+                    }
+                },
+                {
+                    name: 'AdmissionRegistration',
+                    path: 'admission_registration',
+                    component: () => import('../components/AdmissionRegistration.vue'),
+                    meta: {
+                        title: 'admission_registration',
+                        isAuth: false
+                    }
+                },
+                {
+                    name: 'V5Pro',
                     path: 'v5',
                     component: () => import('../components/PPT/V5Pro'),
                     meta: {
@@ -48,7 +66,7 @@ const router = new VueRouter({
                     }
                 },
                 {
-                    name:'WheelPro',
+                    name: 'WheelPro',
                     path: 'wheel',
                     component: () => import('../components/PPT/WheelPro'),
                     meta: {
@@ -57,7 +75,7 @@ const router = new VueRouter({
                     }
                 },
                 {
-                    name:'HumanPro',
+                    name: 'HumanPro',
                     path: 'human',
                     component: () => import('../components/PPT/HumanPro'),
                     meta: {
@@ -66,7 +84,7 @@ const router = new VueRouter({
                     }
                 },
                 {
-                    name:'FishPro',
+                    name: 'FishPro',
                     path: 'fish',
                     component: () => import('../components/PPT/FishPro'),
                     meta: {
@@ -75,7 +93,7 @@ const router = new VueRouter({
                     }
                 },
                 {
-                    name:'StandardPro',
+                    name: 'StandardPro',
                     path: 'standard',
                     component: () => import('../components/PPT/StandardPro'),
                     meta: {
@@ -84,7 +102,7 @@ const router = new VueRouter({
                     }
                 },
                 {
-                    name:'NaviPro',
+                    name: 'NaviPro',
                     path: 'navi',
                     component: () => import('../components/PPT/NaviPro'),
                     meta: {
@@ -93,7 +111,7 @@ const router = new VueRouter({
                     }
                 },
                 {
-                    name:'VisionPro',
+                    name: 'VisionPro',
                     path: 'vision',
                     component: () => import('../components/PPT/VisionPro'),
                     meta: {
@@ -102,7 +120,7 @@ const router = new VueRouter({
                     }
                 },
                 {
-                    name:'StrategyPro',
+                    name: 'StrategyPro',
                     path: 'strategy',
                     component: () => import('../components/PPT/StrategyPro'),
                     meta: {
@@ -111,7 +129,7 @@ const router = new VueRouter({
                     }
                 },
                 {
-                    name:'HardwarePro',
+                    name: 'HardwarePro',
                     path: 'hardware',
                     component: () => import('../components/PPT/HardwarePro'),
                     meta: {
@@ -120,7 +138,7 @@ const router = new VueRouter({
                     }
                 },
                 {
-                    name:'MachPro',
+                    name: 'MachPro',
                     path: 'mach',
                     component: () => import('../components/PPT/MachPro'),
                     meta: {
@@ -129,7 +147,7 @@ const router = new VueRouter({
                     }
                 },
                 {
-                    name:'DoublePro',
+                    name: 'DoublePro',
                     path: 'double',
                     component: () => import('../components/PPT/DoublePro'),
                     meta: {

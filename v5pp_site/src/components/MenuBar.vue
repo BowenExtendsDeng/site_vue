@@ -28,7 +28,7 @@
         <el-menu-item index="6-5" style="font-weight: bold;" disabled>机 械 组 考 核</el-menu-item>
       </el-submenu>
       <div style="float:left;background-color:rgb(220, 230, 256);font-weight: bold;">
-        <el-menu-item index="7">加 入 我 们</el-menu-item>
+        <el-menu-item index="7" @click="toJoinUs">加 入 我 们</el-menu-item>
       </div>
       <div style="float:left;background-color:rgb(200, 200, 250);font-weight: bold;">
         <el-menu-item index="8" disabled>足 基 文 创 商 城</el-menu-item>
@@ -37,7 +37,7 @@
         <el-menu-item index="9" @click="toLogin">队 员 登 录</el-menu-item>
       </div>
       <div style="float:right;background-color:rgb(220, 230, 256);font-weight: bold;">
-        <el-menu-item index="10">录 取 注 册</el-menu-item>
+        <el-menu-item index="10" @click="toAdmissionRegistration">录 取 注 册</el-menu-item>
       </div>
     </el-menu>
     <div class="line"></div>
@@ -97,7 +97,13 @@ export default {
     },
     toMach() {
       this.$router.push({name: 'MachPro'});
-    }
+    },
+    toJoinUs() {
+      this.$router.push({name: 'JoinUs'});
+    },
+    toAdmissionRegistration() {
+      this.$router.push({name: 'AdmissionRegistration'});
+    },
   }
 }
 </script>

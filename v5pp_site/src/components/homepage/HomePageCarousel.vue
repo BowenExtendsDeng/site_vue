@@ -1,30 +1,39 @@
 <template>
   <el-carousel :interval="4000" type="card" height="500px">
     <el-carousel-item v-for="item in 3" :key="item">
-      <h3 class="medium">{{ item }}</h3>
+      <div class="block">
+        <el-image :src="src[item - 1]" :key="item"></el-image>
+      </div>
     </el-carousel-item>
   </el-carousel>
 </template>
 
 <script>
-export default ({})
+export default {
+  data() {
+    return {
+      size: 0,
+      src: [],
+      prefix: 'https://tomcat-oss.oss-cn-beijing.aliyuncs.com/v5ppAssets/',
+      imgPath: ''
+    }
+  },
+  props: {
+    path: {
+      type: String,
+      default: ''
+    },
+    amount: {
+      type: String,
+      default: ''
+    }
+  },
+  mounted() {
+    this.size = parseInt(this.amount);
+    this.imgPath = this.prefix + this.path + '/';
+    for (let i = 1; i <= this.amount; i++) {
+      this.src.push(this.imgPath + i + '.PNG');
+    }
+  }
+}
 </script>
-
-
-<style>
-.el-carousel__item h3 {
-  color: #475669;
-  font-size: 164px;
-  opacity: 0.75;
-  line-height: 400px;
-  margin: 0;
-}
-
-.el-carousel__item:nth-child(2n) {
-  background-color: #99a9bf;
-}
-
-.el-carousel__item:nth-child(2n+1) {
-  background-color: #d3dce6;
-}
-</style>
