@@ -1,42 +1,46 @@
 <template>
-  <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-    <el-form-item style="display: inline-block" label="真实姓名：" prop="name">
-      <el-input style="width: 60ex" type="text" v-model="ruleForm.name"></el-input>
-    </el-form-item>
-    <br/>
-    <el-form-item style="display: inline-block" label="学号：" prop="id">
-      <el-input style="width: 60ex" type="text" v-model="ruleForm.id"></el-input>
-    </el-form-item>
-    <br/>
-    <el-form-item style="display: inline-block" label="密码：" prop="pass">
-      <el-input style="width: 60ex" type="password" v-model="ruleForm.pass"></el-input>
-    </el-form-item>
-    <br/>
-    <el-form-item style="display: inline-block" label="密码强度：">
-      <PasswordStrength style="width: 40ex" :password="ruleForm.pass"></PasswordStrength>
-    </el-form-item>
-    <br/>
-    <el-form-item style="display: inline-block" label="确认密码：" prop="checkPass">
-      <el-input style="width: 60ex" type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
-    </el-form-item>
-    <br/>
-    <el-form-item style="display: inline-block;width: 64ex" label="意向方向：">
-      <el-radio v-model="ruleForm.intention" label="1">软 件 组</el-radio>
-      <el-radio v-model="ruleForm.intention" label="2">硬 件 组</el-radio>
-      <el-radio v-model="ruleForm.intention" label="3">机 械 组</el-radio>
-      <el-radio v-model="ruleForm.intention" label="4">双 创 组</el-radio>
-    </el-form-item>
-    <br/>
-    <el-form-item style="display: inline-block;width: 64ex" label="选择届次：">
-      <el-radio v-model="ruleForm.session" label="1" @click="setSession(year - 1)">{{ year - 1 }}</el-radio>
-      <el-radio v-model="ruleForm.session" label="2" @click="setSession(year)">{{ year }}</el-radio>
-    </el-form-item>
-    <br/>
-    <el-form-item>
-      <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
-      <el-button @click="resetForm('ruleForm')">重置</el-button>
-    </el-form-item>
-  </el-form>
+  <div>
+    <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+      <el-form-item style="display: inline-block" label="真实姓名：" prop="name">
+        <keep-alive>
+          <el-input style="width: 60ex" type="text" v-model="ruleForm.name"></el-input>
+        </keep-alive>
+      </el-form-item>
+      <br/>
+      <el-form-item style="display: inline-block" label="学号：" prop="id">
+        <el-input style="width: 60ex" type="text" v-model="ruleForm.id"></el-input>
+      </el-form-item>
+      <br/>
+      <el-form-item style="display: inline-block" label="密码：" prop="pass">
+        <el-input style="width: 60ex" type="password" v-model="ruleForm.pass"></el-input>
+      </el-form-item>
+      <br/>
+      <el-form-item style="display: inline-block" label="密码强度：">
+        <PasswordStrength style="width: 40ex" :password="ruleForm.pass"></PasswordStrength>
+      </el-form-item>
+      <br/>
+      <el-form-item style="display: inline-block" label="确认密码：" prop="checkPass">
+        <el-input style="width: 60ex" type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
+      </el-form-item>
+      <br/>
+      <el-form-item style="display: inline-block;width: 64ex" label="意向方向：">
+        <el-radio v-model="ruleForm.intention" label="1">软 件 组</el-radio>
+        <el-radio v-model="ruleForm.intention" label="2">硬 件 组</el-radio>
+        <el-radio v-model="ruleForm.intention" label="3">机 械 组</el-radio>
+        <el-radio v-model="ruleForm.intention" label="4">双 创 组</el-radio>
+      </el-form-item>
+      <br/>
+      <el-form-item style="display: inline-block;width: 64ex" label="选择届次：">
+        <el-radio v-model="ruleForm.session" label="1" @click="setSession(year - 1)">{{ year - 1 }}</el-radio>
+        <el-radio v-model="ruleForm.session" label="2" @click="setSession(year)">{{ year }}</el-radio>
+      </el-form-item>
+      <br/>
+      <el-form-item>
+        <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
+        <el-button @click="resetForm('ruleForm')">重置</el-button>
+      </el-form-item>
+    </el-form>
+  </div>
 </template>
 
 <script>
