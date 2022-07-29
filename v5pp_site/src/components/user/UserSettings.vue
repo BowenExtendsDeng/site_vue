@@ -1,21 +1,27 @@
 <template>
   <div>
+    <p style="text-align: center;font-weight: bold;color: #23425e;font-size: large">重置密码</p>
     <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
       <el-form-item style="display: inline-block" label="密码" prop="pass">
-        <el-input style="width: 80ex" type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
+        <el-input style="width: 60ex" type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
       </el-form-item>
       <br/>
       <el-form-item style="display: inline-block" label="密码强度">
-        <PasswordStrength style="width: 60ex" :password="ruleForm.pass"></PasswordStrength>
+        <PasswordStrength style="width: 40ex" :password="ruleForm.pass"></PasswordStrength>
       </el-form-item>
       <br/>
       <el-form-item style="display: inline-block" label="确认密码" prop="checkPass">
-        <el-input style="width: 80ex" type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
+        <el-input style="width: 60ex" type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
       </el-form-item>
       <br/>
       <el-form-item>
         <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
         <el-button @click="resetForm('ruleForm')">重置</el-button>
+      </el-form-item>
+      <br/>
+      <p style="text-align: center;font-weight: bold;color: #23425e;font-size: large">我要退役</p>
+      <el-form-item style="display:inline-block" label="确认退役？">
+        <el-button type="primary" @click="submitRetirement">确认</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -28,7 +34,7 @@ export default {
     PasswordStrength
   },
   data() {
-    var checkAge = (rule, value, callback) => {
+    const checkAge = (rule, value, callback) => {
       if (!value) {
         return callback(new Error('年龄不能为空'));
       }
@@ -44,7 +50,7 @@ export default {
         }
       }, 1000);
     };
-    var validatePass = (rule, value, callback) => {
+    const validatePass = (rule, value, callback) => {
       if (value === '') {
         callback(new Error('请输入密码'));
       } else {
@@ -54,7 +60,7 @@ export default {
         callback();
       }
     };
-    var validatePass2 = (rule, value, callback) => {
+    const validatePass2 = (rule, value, callback) => {
       if (value === '') {
         callback(new Error('请再次输入密码'));
       } else if (value !== this.ruleForm.pass) {
@@ -92,6 +98,9 @@ export default {
           return false;
         }
       });
+    },
+    submitRetirement(){
+      alert('submit!');
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();

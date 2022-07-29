@@ -1,6 +1,6 @@
 <template>
     <div class="header" id="headline">
-        <img src="../assets/npu.png">
+        <img src="../assets/npu.png" alt="">
         <v-text>足球机器人创新实践基地</v-text>
     </div>
 </template>
