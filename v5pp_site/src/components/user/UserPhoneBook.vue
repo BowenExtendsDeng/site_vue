@@ -11,7 +11,7 @@
       </el-table-column>
       <el-table-column prop="major" label="专业">
       </el-table-column>
-      <el-table-column prop="phone" label="电话">
+      <el-table-column prop="telephone" label="电话">
       </el-table-column>
       <el-table-column prop="email" label="邮箱">
       </el-table-column>
