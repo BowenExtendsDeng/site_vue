@@ -31,7 +31,7 @@ export default {
         if (value === "") {
           callback(new Error("请输入正确的用户名"));
         } else {
-          var uPattern = /^[a-zA-Z0-9_]{4,16}$/;
+          const uPattern = /^[a-zA-Z0-9_]{4,16}$/;
           if (uPattern.test(value)) {
             callback();
           }

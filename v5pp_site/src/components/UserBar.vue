@@ -14,7 +14,7 @@
       <el-menu-item index="5">管 理 招 新</el-menu-item>
       <el-menu-item index="6" disabled>管 理 账 目</el-menu-item>
       <el-menu-item index="6" disabled>管 理 团 队</el-menu-item>
-      <el-menu-item index="7" @click="toUserSettings">重 置 密 码</el-menu-item>
+      <el-menu-item index="7" @click="toUserSettings">用 户 设 置</el-menu-item>
       <div style="float:right;background-color:rgb(220, 230, 256);font-weight: bold;">
         <el-menu-item index="5" @click="toLogin">返 回 主 页</el-menu-item>
       </div>

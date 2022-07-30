@@ -1,6 +1,6 @@
 <template>
     <div id="loginpage">
-        <el-descriptions style="float:middle;background-color:rgb(220, 230, 256);font-weight: bold;" title="我 的 信 息"
+        <el-descriptions style="background-color:rgb(220, 230, 256);font-weight: bold;" title="我 的 信 息"
             direction="vertical" :column="2" border>
             <el-descriptions-item label="队 员 姓 名">{{ name }}</el-descriptions-item>
             <el-descriptions-item label="队 员 职 称">{{ role }}</el-descriptions-item>
@@ -22,19 +22,39 @@
 export default {
     data() {
         return {
-            name: '邓博文',
-            userId: '2020300849',
-            grade: '2020级',
-            major: '软件工程',
-            phone: '15202475956',
-            email: '2631702650@qq.com',
-            birthday: '2001-09-06',
-            role: '副队长',
-            sex: '男',
-            highSchool: '西工大附中'
-        };
+            name:'',
+            studentId:'',
+            session:'',
+            major:'',
+            telephone: '',
+            email: '',
+            birthday:'',
+            role:'',
+            sex: '',
+            highSchool: ''
+        }
     },
     methods: {
+
+    },
+    mounted() {
+      this.$axios
+          .post("http://localhost:8849/staff/getStaffById",{
+
+          }
+      ).then(successResponse => {
+        console.log(successResponse.data);
+        this.name = successResponse.data.name;
+        this.studentId = successResponse.data.studentId;
+        this.session = successResponse.data.session;
+        this.major = successResponse.data.major;
+        this.telephone = successResponse.data.phone;
+        this.email = successResponse.data.email;
+        this.birthday = successResponse.data.birthday;
+        this.role = successResponse.data.role;
+        this.sex = successResponse.data.sex;
+        this.highSchool = successResponse.data.highSchool;
+      });
     }
 }
 </script>
