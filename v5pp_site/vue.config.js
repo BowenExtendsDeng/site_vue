@@ -1,5 +1,3 @@
-const {defineConfig} = require('@vue/cli-service')
-
 module.exports = {
     chainWebpack: config => {
         config.module.rule('md')
@@ -11,6 +9,7 @@ module.exports = {
             .loader('vue-markdown-loader/lib/markdown-compiler')
             .options({
                 raw: true
+
             })
     }
 }

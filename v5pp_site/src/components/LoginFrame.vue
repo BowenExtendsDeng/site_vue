@@ -22,31 +22,30 @@
 
 <script>
 import router from '@/routers';
+import {setCookie} from '@/cookie';
 
 export default {
     name: "LoginFrame",
     data() {
-        var validateUsername = (rule, value, callback) => {
-            if (value === "") {
-                callback(new Error("请输入正确的用户名"));
-            }
-            else {
-                var uPattern = /^[a-zA-Z0-9_]{4,16}$/;
-                if (uPattern.test(value)) {
-                    callback();
-                }
-                callback(new Error("用户名只能包含字母，数字，下划线，且长度为4-16位"));
-            }
-        };
-        var validatePassword = (rule, value, callback) => {
-            if (value === "") {
-                callback(new Error("请输入密码"));
-            }
-            else {
-                callback();
-            }
-        };
-        return {
+      const validateUsername = (rule, value, callback) => {
+        if (value === "") {
+          callback(new Error("请输入正确的用户名"));
+        } else {
+          var uPattern = /^[a-zA-Z0-9_]{4,16}$/;
+          if (uPattern.test(value)) {
+            callback();
+          }
+          callback(new Error("用户名只能包含字母，数字，下划线，且长度为4-16位"));
+        }
+      };
+      const validatePassword = (rule, value, callback) => {
+        if (value === "") {
+          callback(new Error("请输入密码"));
+        } else {
+          callback();
+        }
+      };
+      return {
             ruleForm: {
                 username: "",
                 password: ""
@@ -65,10 +64,23 @@ export default {
         submitForm(formName) {
             this.$refs[formName].validate((valid) => {
                 if (valid) {
-                    this.$alert("", "登陆成功", {
-                        confirmButtonText: "确定",
-                    });
-                    router.push({ name: "UserPage" });
+                    this.$axios
+                        .post("http://localhost:8849/auth/login", {// 请求后台登陆接口
+                          username: this.ruleForm.username,
+                          password: this.ruleForm.password
+                        }).then(successResponse => {
+                          console.log(successResponse.data);
+                            if (successResponse.data.code === "200") {
+                                setCookie("username", this.ruleForm.username);
+                                setCookie("password", this.ruleForm.password);
+                                router.push({ name: "UserPage" });
+                            } else {
+                                this.$message({
+                                    message: successResponse.data.msg,
+                                    type: "error"
+                                });
+                            }
+                        });
                 }
                 else {
                     this.$alert("登录信息不全或有误", "登陆失败", {
@@ -76,7 +88,6 @@ export default {
                     });
                     return false;
                 }
-                alert("TODO：跳转未写完！");
             });
         },
         resetForm(formName) {
@@ -95,6 +106,5 @@ export default {
     color: rgb(0, 84, 163);
     font-family: '楷体';
     font-weight: bold;
-    text-align: middle;
 }
 </style>
