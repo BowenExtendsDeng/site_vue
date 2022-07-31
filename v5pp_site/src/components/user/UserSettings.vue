@@ -28,28 +28,13 @@
 </template>
 <script>
 import PasswordStrength from "../../components/utils/PasswordStrength";
+import {getCookie} from "@/cookie";
 
 export default {
   components: {
     PasswordStrength
   },
   data() {
-    const checkAge = (rule, value, callback) => {
-      if (!value) {
-        return callback(new Error('年龄不能为空'));
-      }
-      setTimeout(() => {
-        if (!Number.isInteger(value)) {
-          callback(new Error('请输入数字值'));
-        } else {
-          if (value < 18) {
-            callback(new Error('必须年满18岁'));
-          } else {
-            callback();
-          }
-        }
-      }, 1000);
-    };
     const validatePass = (rule, value, callback) => {
       if (value === '') {
         callback(new Error('请输入密码'));
@@ -72,8 +57,7 @@ export default {
     return {
       ruleForm: {
         pass: '',
-        checkPass: '',
-        age: ''
+        checkPass: ''
       },
       rules: {
         pass: [
@@ -81,9 +65,6 @@ export default {
         ],
         checkPass: [
           {validator: validatePass2, trigger: 'blur'}
-        ],
-        age: [
-          {validator: checkAge, trigger: 'blur'}
         ]
       }
     };
@@ -92,14 +73,30 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('submit!');
+          this.$axios
+              .post("http://localhost:8849/staff/updatePassword", {
+                username: getCookie("username"),
+                password: this.ruleForm.pass
+              }).then(response => {
+            if (response.data.code === "200") {
+              this.$message({
+                message: "修改成功",
+                type: "success"
+              });
+            } else {
+              this.$message({
+                message: "修改失败",
+                type: "error"
+              });
+            }
+          })
         } else {
           console.log('error submit!!');
           return false;
         }
       });
     },
-    submitRetirement(){
+    submitRetirement() {
       alert('submit!');
     },
     resetForm(formName) {

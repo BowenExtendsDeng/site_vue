@@ -1,8 +1,8 @@
-export function setCookie(key,value) {
-    var exdate = new Date();//获取时间
-    exdate.setTime(exdate.getTime() + 24 * 60 *60); //保存的天数，一天
+export function setCookie(key, value) {
+    const exDate = new Date();//获取时间
+    exDate.setTime(exDate.getTime() + 24 * 60 * 60); //保存的天数，一天
     //字符串拼接cookie
-    window.document.cookie = key + "=" + value + ";path=/;expires=" + exdate.toGMTString();
+    window.document.cookie = key + "=" + value + ";path=/;expires=" + exDate.toGMTString();
 }
 
 //读取cookie
@@ -13,7 +13,7 @@ export function getCookie(param) {
         const arr = document.cookie.split('; '); //获取key value数组
         for (let i = 0; i < arr.length; i++) {
             const arr2 = arr[i].split('='); //获取该key 下面的 value数组
-            if(arr2[0] === param) {
+            if (arr2[0] === param) {
                 c_param = arr2[1];
             }
         }
