@@ -97,7 +97,26 @@ export default {
       });
     },
     submitRetirement() {
-      alert('submit!');
+      this.$confirm('此操作将不可以申请生产实习证明，同时之后将不会再收到基地任何邮件通知, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.$alert('感谢您对V5++所作出的贡献，您的退役礼物将在7个工作日内寄出', '退役成功', {
+          confirmButtonText: '确定',
+          callback: () => {
+            this.$message({
+              type: 'success',
+              message: `退役成功`
+            });
+          }
+        });
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '操作已取消'
+        });
+      });
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();

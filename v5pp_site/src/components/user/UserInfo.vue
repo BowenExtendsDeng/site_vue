@@ -52,7 +52,13 @@ export default {
       this.telephone = successResponse.data.telephone;
       this.email = successResponse.data.email;
       this.birthday = successResponse.data.birthday;
-      this.role = successResponse.data.role;
+      if(successResponse.data.role === "staff"){
+        this.role = "队员";
+      }else if(successResponse.data.role === "captain") {
+        this.role = "队长";
+      }else if(successResponse.data.role === "vice_captain") {
+        this.role = "副队长";
+      }
       this.sex = successResponse.data.sex;
       this.highSchool = successResponse.data.highSchool;
     });
