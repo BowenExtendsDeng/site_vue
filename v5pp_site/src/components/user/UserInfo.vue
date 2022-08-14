@@ -51,7 +51,12 @@ export default {
       this.major = successResponse.data.major;
       this.telephone = successResponse.data.telephone;
       this.email = successResponse.data.email;
-      this.birthday = successResponse.data.birthday;
+      const date = new Date(successResponse.data.birthday);
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1;
+      const day = date.getDate();
+      const datetime = year + '-' + month + '-' + day;
+      this.birthday = datetime;
       if(successResponse.data.role === "staff"){
         this.role = "队员";
       }else if(successResponse.data.role === "captain") {

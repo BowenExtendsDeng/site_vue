@@ -8,9 +8,8 @@
         <el-menu-item index="3-1" style="font-weight: bold;" @click="toBudgetOverView">概 览</el-menu-item>
         <el-menu-item index="3-2" style="font-weight: bold;" @click="toBudgetApplication">经 费 申 请</el-menu-item>
         <el-menu-item index="3-3" style="font-weight: bold;" @click="toUploadFile">发 票 上 传</el-menu-item>
-        <el-menu-item index="3-4" style="font-weight: bold;" @click="toReceiveBudget">收 款 确 认</el-menu-item>
       </el-submenu>
-      <el-menu-item index="4">我 的 比 赛 日 程</el-menu-item>
+      <el-menu-item index="4" disabled>我 的 比 赛 日 程</el-menu-item>
       <el-menu-item index="5">管 理 招 新</el-menu-item>
       <el-menu-item index="6" disabled>管 理 账 目</el-menu-item>
       <el-menu-item index="6" disabled>管 理 团 队</el-menu-item>
@@ -49,9 +48,6 @@ export default {
     },
     toUploadFile() {
       this.$router.push({name: 'uploadBill'});
-    },
-    toReceiveBudget() {
-      this.$router.push({name: 'receiveBudget'});
     },
     toUserSettings() {
       this.$router.push({name: 'UserSettings'});

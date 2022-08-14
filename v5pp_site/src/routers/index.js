@@ -221,15 +221,6 @@ const router = new VueRouter({
                     }
                 },
                 {
-                    name: 'receiveBudget',
-                    path: 'receiveBudget',
-                    component: () => import('../components/budget/ReceiveBudget.vue'),
-                    meta: {
-                        title: 'receiveBudget',
-                        isAuth: true
-                    }
-                },
-                {
                     name: 'UserSettings',
                     path: 'settings',
                     component: () => import('../components/user/UserSettings.vue'),
@@ -249,7 +240,7 @@ router.beforeEach((to, from, next) => {
         Vue.prototype.$alert('vue-quill-editor组件不兼容IE10及以下浏览器，请使用更高版本的浏览器查看', '浏览器不兼容通知', {
             confirmButtonText: '确定'
         });
-    } else {
+    } else{
         next();
     }
 })

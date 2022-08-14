@@ -4,15 +4,15 @@
       <el-menu-item index="1" @click="toHomepageIntro">基 地 简 介</el-menu-item>
       <el-menu-item index="2" @click="toHomePageCarousel">基 地 新 闻</el-menu-item>
       <el-menu-item index="3" @click="toStructureOverview">组 织 架 构 图</el-menu-item>
-      <el-submenu index="4">
-        <template slot="title">部 门 简 介</template>
-        <el-menu-item index="4-1" style="font-weight: bold;" @click="toV5">V 5 + + 组</el-menu-item>
-        <el-menu-item index="4-2" style="font-weight: bold;" @click="toFish">水 下 实 物 组</el-menu-item>
-        <el-menu-item index="4-3" style="font-weight: bold;" @click="toHuman">人 型 实 物 组</el-menu-item>
-        <el-menu-item index="4-4" style="font-weight: bold;" @click="toWheel">轮 式 实 物 组</el-menu-item>
-        <el-menu-item index="4-5" style="font-weight: bold;" @click="toStandard">标 准 平 台 组</el-menu-item>
-        <el-menu-item index="4-6" style="font-weight: bold;" @click="toDouble">创 新 创 业 组</el-menu-item>
-      </el-submenu>
+<!--      <el-submenu index="4">-->
+<!--        <template slot="title">部 门 简 介</template>-->
+<!--        <el-menu-item index="4-1" style="font-weight: bold;" @click="toV5">V 5 + + 组</el-menu-item>-->
+<!--        <el-menu-item index="4-2" style="font-weight: bold;" @click="toFish">水 下 实 物 组</el-menu-item>-->
+<!--        <el-menu-item index="4-3" style="font-weight: bold;" @click="toHuman">人 型 实 物 组</el-menu-item>-->
+<!--        <el-menu-item index="4-4" style="font-weight: bold;" @click="toWheel">轮 式 实 物 组</el-menu-item>-->
+<!--        <el-menu-item index="4-5" style="font-weight: bold;" @click="toStandard">标 准 平 台 组</el-menu-item>-->
+<!--        <el-menu-item index="4-6" style="font-weight: bold;" @click="toDouble">创 新 创 业 组</el-menu-item>-->
+<!--      </el-submenu>-->
       <el-submenu index="5">
         <template slot="title">技 术 组 简 介</template>
         <el-menu-item index="5-1" style="font-weight: bold;" @click="toVision">软 件 视 觉 组</el-menu-item>
