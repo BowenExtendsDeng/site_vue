@@ -6,6 +6,7 @@
 </template>
 <script>
 import LoginFrame from './LoginFrame.vue';
+
 export default {
   name: 'LoginPage',
   components: {

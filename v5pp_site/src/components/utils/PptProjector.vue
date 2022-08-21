@@ -10,18 +10,18 @@
 export default {
   data() {
     return {
-      size:0,
+      size: 0,
       src: [],
-      prefix:'https://tomcat-oss.oss-cn-beijing.aliyuncs.com/v5ppAssets/',
-      imgPath:''
+      prefix: 'https://tomcat-oss.oss-cn-beijing.aliyuncs.com/v5ppAssets/',
+      imgPath: ''
     }
   },
-  props:{
-    path:{
+  props: {
+    path: {
       type: String,
       default: ''
     },
-    amount:{
+    amount: {
       type: String,
       default: ''
     }

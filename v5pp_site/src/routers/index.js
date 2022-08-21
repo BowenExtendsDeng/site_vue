@@ -1,5 +1,6 @@
 import VueRouter from "vue-router"
 import Vue from "vue";
+
 const router = new VueRouter({
     routes: [
         {
@@ -240,7 +241,7 @@ router.beforeEach((to, from, next) => {
         Vue.prototype.$alert('vue-quill-editor组件不兼容IE10及以下浏览器，请使用更高版本的浏览器查看', '浏览器不兼容通知', {
             confirmButtonText: '确定'
         });
-    } else{
+    } else {
         next();
     }
 })

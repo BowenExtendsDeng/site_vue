@@ -11,8 +11,7 @@
       </el-submenu>
       <el-menu-item index="4" disabled>我 的 比 赛 日 程</el-menu-item>
       <el-menu-item index="5">管 理 招 新</el-menu-item>
-      <el-menu-item index="6" disabled>管 理 账 目</el-menu-item>
-      <el-menu-item index="6" disabled>管 理 团 队</el-menu-item>
+      <el-menu-item index="6" v-if="role==='vice_captain'">管 理 账 目</el-menu-item>
       <el-menu-item index="7" @click="toUserSettings">用 户 设 置</el-menu-item>
       <div style="float:right;background-color:rgb(220, 230, 256);font-weight: bold;">
         <el-menu-item index="5" @click="toLogin">返 回 主 页</el-menu-item>
@@ -23,9 +22,13 @@
 </template>
 
 <script>
+import {getCookie} from "@/cookie";
+
 export default {
   data() {
-    return {};
+    return {
+      role: getCookie("role")
+    };
   },
   methods: {
     handleSelect(key, keyPath) {
@@ -52,6 +55,6 @@ export default {
     toUserSettings() {
       this.$router.push({name: 'UserSettings'});
     }
-  }
+  },
 }
 </script>

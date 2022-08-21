@@ -57,11 +57,11 @@ export default {
       const day = date.getDate();
       const datetime = year + '-' + month + '-' + day;
       this.birthday = datetime;
-      if(successResponse.data.role === "staff"){
+      if (successResponse.data.role === "staff") {
         this.role = "队员";
-      }else if(successResponse.data.role === "captain") {
+      } else if (successResponse.data.role === "captain") {
         this.role = "队长";
-      }else if(successResponse.data.role === "vice_captain") {
+      } else if (successResponse.data.role === "vice_captain") {
         this.role = "副队长";
       }
       this.sex = successResponse.data.sex;

@@ -6,9 +6,10 @@
 
 <script>
 import PptProjector from "@/components/utils/PptProjector";
+
 export default {
   name: "IntroPro",
-  components:{
+  components: {
     PptProjector
   },
 }

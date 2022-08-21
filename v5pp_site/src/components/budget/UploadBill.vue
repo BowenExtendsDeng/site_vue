@@ -57,8 +57,8 @@ export default {
         ).then(successResponse => {
       console.log(successResponse.data);
       this.buy_items = successResponse.data;
-      this.buy_items.forEach(element=>{
-        if(element.stage === 2){
+      this.buy_items.forEach(element => {
+        if (element.stage === 2) {
           this.options.push({
             value: element.uuid,
             label: element.remark
@@ -66,7 +66,7 @@ export default {
         }
       })
       console.log(this.options)
-      if(this.options.length === 0){
+      if (this.options.length === 0) {
         this.$alert('查询到您没有需要上传发票的账单')
       }
     });

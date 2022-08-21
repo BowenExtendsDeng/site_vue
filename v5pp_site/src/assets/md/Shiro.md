@@ -4,15 +4,15 @@
 
 - Subject 主体
 
-    访问系统的用户，主题可以是用户、程序等，进行认证的称为主体
+  访问系统的用户，主题可以是用户、程序等，进行认证的称为主体
 
 - Principal 身份信息
 
-    进行身份验证的标识，标识具有唯一性，一个主体可以有多个身份，但是必须只有一个主身份（primary principal）
+  进行身份验证的标识，标识具有唯一性，一个主体可以有多个身份，但是必须只有一个主身份（primary principal）
 
 - credential 凭证信息
 
-    密码，证书等等
+  密码，证书等等
 
 #### 2, Shiro认证流程
 
@@ -51,7 +51,7 @@ public class TestAuthenticator{
 
 #### 4, 自定义 Realm 实现
 
-自定义 Realm 通过 
+自定义 Realm 通过
 
 实现 AuthencatingRealm 实现认证（doGetAuthenticationInfo)，
 
@@ -83,17 +83,17 @@ public class CustomRealm extends AuthorizingRealm throws AuthenticationException
 
 1. ###### MD5
 
-    作用为加密或者签名（校验和）
+   作用为加密或者签名（校验和）
 
-    算法不可逆
+   算法不可逆
 
 2. ###### Salt
 
-    做MD5前加入随机字符串
+   做MD5前加入随机字符串
 
 3. ###### Shiro 实现
 
-    加密介绍
+   加密介绍
 
     ~~~java
     public class TestShiroMD5{
@@ -108,7 +108,7 @@ public class CustomRealm extends AuthorizingRealm throws AuthenticationException
     }
     ~~~
 
-    主类
+   主类
 
     ~~~java
     public class TestAuthenticator{
@@ -144,7 +144,7 @@ public class CustomRealm extends AuthorizingRealm throws AuthenticationException
     }
     ~~~
 
-    认证
+   认证
 
     ~~~java
     public class Md5Realm extends AuthorizingRealm throws AuthenticationException{
