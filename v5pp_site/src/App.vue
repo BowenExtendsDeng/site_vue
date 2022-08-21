@@ -19,7 +19,7 @@ import HeadLineFrame from './components/HeadLineFrame.vue'
 export default {
   name: 'App',
   components: {
-    HeadLineFrame
+    HeadLineFrame,
   }
 }
 </script>
@@ -31,7 +31,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
   color: #2c3e50;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 .el-footer {
@@ -45,27 +45,28 @@ export default {
   background-color: #E9EEF3;
   color: #333;
   text-align: center;
-  line-height: 20px;
+  line-height: 60px;
+  height: 85ex;
 }
 
 .el-header {
   background-color: white;
   color: #333;
   text-align: center;
-  line-height: 30px;
+  line-height: 50px;
 }
 
 body > .el-cont
 ainer {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .el-container:nth-child(5) .el-aside,
 .el-container:nth-child(6) .el-aside {
-  line-height: 30px;
+  line-height: 50px;
 }
 
 .el-container:nth-child(7) .el-aside {
-  line-height: 20px;
+  line-height: 50px;
 }
 </style>

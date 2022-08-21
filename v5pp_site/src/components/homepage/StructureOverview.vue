@@ -1,6 +1,6 @@
 <template>
   <div class="img">
-    <img src="../../assets/structure.png" alt="组织架构图">
+    <el-image :src="require('../../assets/structure.png')" alt="组织架构图" fit="cover"/>
   </div>
 </template>
 
@@ -11,9 +11,9 @@ export default {
 </script>
 
 <style scoped>
-div {
-  width: 60%;
-  height: 60%;
+.img {
+  width: 100%;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
