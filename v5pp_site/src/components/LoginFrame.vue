@@ -2,6 +2,7 @@
   <div id="loginframe">
     <v-text class="header">队 员 登 录 通 道</v-text>
     <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+      <br/>
       <el-form-item style="display:inline-block" label="用户名" prop="username">
         <el-input style="width:300px" type="text" v-model="ruleForm.username"></el-input>
       </el-form-item>
@@ -10,8 +11,9 @@
         <el-input style="width:300px" type="password" v-model="ruleForm.password"></el-input>
       </el-form-item>
       <br/>
+      <vCode :show="isShow" @success="onSuccess" @close="onClose"></vCode>
       <el-form-item>
-        <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
+        <el-button type="primary" @click="submit">提交</el-button>
         <el-button @click="resetForm('ruleForm')">重置</el-button>
         <el-button @click="toHomePage">返回</el-button>
       </el-form-item>
@@ -21,10 +23,14 @@
 </template>
 
 <script>
+import vCode from "vue-puzzle-vcode";
 import router from '@/routers';
 import {setCookie} from '@/cookie';
 
 export default {
+  components: {
+    vCode,
+  },
   name: "LoginFrame",
   data() {
     const validateUsername = (rule, value, callback) => {
@@ -46,6 +52,7 @@ export default {
       }
     };
     return {
+      isShow: false,
       ruleForm: {
         username: "",
         password: ""
@@ -61,32 +68,24 @@ export default {
     };
   },
   methods: {
-    submitForm(formName) {
-      this.$refs[formName].validate((valid) => {
-        if (valid) {
-          this.$axios
-              .post("http://localhost:8849/auth/login", {// 请求后台登陆接口
-                username: this.ruleForm.username,
-                password: this.ruleForm.password
-              }).then(successResponse => {
-            console.log(successResponse.data);
-            if (successResponse.data.code === "200") {
-              setCookie("username", successResponse.data.data.username);
-              setCookie("password", successResponse.data.data.password);
-              setCookie("role", successResponse.data.data.role);
-              router.push({name: "UserPage"});
-            } else {
-              this.$message({
-                message: successResponse.data.msg,
-                type: "error"
-              });
-            }
-          });
+    submitForm() {
+      this.$axios
+          .post("http://localhost:8849/auth/login", {// 请求后台登陆接口
+            username: this.ruleForm.username,
+            password: this.ruleForm.password
+          }).then(successResponse => {
+        console.log(successResponse.data);
+        if (successResponse.data.code === "200") {
+          setCookie("username", successResponse.data.data.username);
+          setCookie("password", successResponse.data.data.password);
+          setCookie("role", successResponse.data.data.role);
+          setCookie("isRetired", successResponse.data.data.isRetired);
+          router.push({name: "UserPage"});
         } else {
-          this.$alert("登录信息不全或有误", "登陆失败", {
-            confirmButtonText: "确定",
+          this.$message({
+            message: successResponse.data.msg,
+            type: "error"
           });
-          return false;
         }
       });
     },
@@ -95,7 +94,28 @@ export default {
     },
     toHomePage() {
       this.$router.push("/");
-    }
+    },
+    submit() {
+      let formName = "ruleForm";
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          this.isShow = true;
+        } else {
+          this.$alert("登录信息不全或有误", "登陆失败", {
+            confirmButtonText: "确定",
+          });
+          return false;
+        }
+      });
+    },
+    onSuccess() {
+      this.isShow = false; // 通过验证后，需要手动关闭模态框
+      this.submitForm();
+    },
+
+    onClose() {
+      this.isShow = false;
+    },
   }
 }
 </script>

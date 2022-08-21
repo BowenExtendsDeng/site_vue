@@ -20,8 +20,8 @@
       </el-form-item>
       <br/>
       <p style="text-align: center;font-weight: bold;color: #23425e;font-size: large">我要退役</p>
-      <el-form-item style="display:inline-block" label="确认退役？">
-        <el-button type="primary" @click="submitRetirement">确认</el-button>
+      <el-form-item style="display:inline-block" label="确认退役？" v-if="isDisabled">
+        <el-button type="primary" @click="submitRetirement" :disabled="isDisabled()">确认</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -55,6 +55,7 @@ export default {
       }
     };
     return {
+      isRetired: getCookie("isRetired"),
       ruleForm: {
         pass: '',
         checkPass: ''
@@ -105,10 +106,23 @@ export default {
         this.$alert('感谢您对V5++所作出的贡献，您的退役礼物将在7个工作日内寄出', '退役成功', {
           confirmButtonText: '确定',
           callback: () => {
-            this.$message({
-              type: 'success',
-              message: `退役成功`
-            });
+            this.$axios
+                .post("http://localhost:8849/staff/updateRetirement", {
+                  username: getCookie("username")
+                }).then(response => {
+              if (response.data.code === "200") {
+                this.$message({
+                  message: "退役成功",
+                  type: "success"
+                });
+                this.$router.push("/");
+              } else {
+                this.$message({
+                  message: "提交退役失败，请稍后再试",
+                  type: "error"
+                });
+              }
+            })
           }
         });
       }).catch(() => {
@@ -120,6 +134,9 @@ export default {
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();
+    },
+    isDisabled() {
+      return this.isRetired === "true";
     }
   }
 }

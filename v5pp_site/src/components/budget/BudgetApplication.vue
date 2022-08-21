@@ -1,6 +1,9 @@
 <template>
   <div id="loginframe">
+    <br/>
     <v-text class="header">采 购 项 目 申 请</v-text>
+    <br/>
+    <br/>
     <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
       <el-form-item style="display:inline-block" label="采购项说明" prop="description">
         <el-input style="width:300px" type="text" v-model="ruleForm.description"></el-input>

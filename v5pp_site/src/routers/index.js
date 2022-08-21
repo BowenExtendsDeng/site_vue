@@ -229,6 +229,24 @@ const router = new VueRouter({
                         title: 'settings',
                         isAuth: true
                     }
+                },
+                {
+                    name: 'ManageBudgetOverview',
+                    path: 'manageBudgetOverview',
+                    component: () => import('../components/manage_budgets/ManageBudgetOverview.vue'),
+                    meta: {
+                        title: 'manageBudgetOverview',
+                        isAuth: true
+                    }
+                },
+                {
+                    name: 'ManageBudgetApplication',
+                    path: 'manageBudgetApplication',
+                    component: () => import('../components/manage_budgets/ManageBudgetApplication.vue'),
+                    meta: {
+                        title: 'manageBudgetApplication',
+                        isAuth: true
+                    }
                 }
             ]
         }
