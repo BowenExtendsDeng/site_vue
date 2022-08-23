@@ -3,19 +3,19 @@
     <el-table
         :data="tableData"
         style="width: 100%">
-      <el-table-column prop="buyer" label="发起人">
+      <el-table-column label="发起人" prop="buyer">
       </el-table-column>
-      <el-table-column prop="buyTime" label="日期">
+      <el-table-column label="日期" prop="buyTime">
       </el-table-column>
-      <el-table-column prop="remark" label="购买事项">
+      <el-table-column label="购买事项" prop="remark">
       </el-table-column>
-      <el-table-column prop="amount" label="金额">
+      <el-table-column label="金额" prop="amount">
       </el-table-column>
-      <el-table-column prop="isInvoiceElectronicForm" label="是否为电子发票">
+      <el-table-column label="是否为电子发票" prop="isInvoiceElectronicForm">
       </el-table-column>
-      <el-table-column prop="invoicePath" label="电子发票路径">
+      <el-table-column label="电子发票路径" prop="invoicePath">
       </el-table-column>
-      <el-table-column prop="stage" label="采购阶段">
+      <el-table-column label="采购阶段" prop="stage">
       </el-table-column>
     </el-table>
   </div>

@@ -1,7 +1,10 @@
 <template>
   <div id="loginpage">
-    <el-descriptions style="background-color:rgb(220, 230, 256);font-weight: bold;" title="我 的 信 息"
-                     direction="vertical" :column="2" border>
+    <br/>
+    <el-descriptions :column="2" border
+                     direction="vertical"
+                     style="background-color:rgb(220, 230, 256);font-weight: bold;"
+                     title="我 的 信 息">
       <el-descriptions-item label="队 员 姓 名">{{ name }}</el-descriptions-item>
       <el-descriptions-item label="队 员 职 称">{{ role }}</el-descriptions-item>
       <el-descriptions-item label="队 员 届 次">{{ session }}</el-descriptions-item>

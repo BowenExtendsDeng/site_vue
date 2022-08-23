@@ -4,16 +4,16 @@
     <v-text class="header">采 购 项 目 申 请</v-text>
     <br/>
     <br/>
-    <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-      <el-form-item style="display:inline-block" label="采购项说明" prop="description">
-        <el-input style="width:300px" type="text" v-model="ruleForm.description"></el-input>
+    <el-form ref="ruleForm" :model="ruleForm" :rules="rules" class="demo-ruleForm" label-width="100px" status-icon>
+      <el-form-item label="采购项说明" prop="description" style="display:inline-block">
+        <el-input v-model="ruleForm.description" style="width:300px" type="text"></el-input>
       </el-form-item>
       <br/>
-      <el-form-item style="display:inline-block" label="预算金额" prop="amount">
-        <el-input style="width:300px" type="number" v-model="ruleForm.amount"></el-input>
+      <el-form-item label="预算金额" prop="amount" style="display:inline-block">
+        <el-input v-model="ruleForm.amount" style="width:300px" type="number"></el-input>
       </el-form-item>
       <br/>
-      <el-tooltip class="item" effect="dark" content="有电子发票需要提交电子发票，有纸质发票需要向管理员提交纸质发票"
+      <el-tooltip class="item" content="有电子发票需要提交电子发票，有纸质发票需要向管理员提交纸质发票" effect="dark"
                   placement="top">
         <el-switch
             v-model="ruleForm.isInvoiceElectronicForm"

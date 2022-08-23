@@ -1,7 +1,7 @@
 <template>
   <div class="demo-image__placeholder">
     <div class="block">
-      <el-image :src="src[index - 1]" v-for="index in size" :key="index"></el-image>
+      <el-image v-for="index in size" :key="index" :src="src[index - 1]"></el-image>
     </div>
   </div>
 </template>

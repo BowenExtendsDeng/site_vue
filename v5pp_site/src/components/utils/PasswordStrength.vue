@@ -1,19 +1,19 @@
 <template>
   <div id="container">
     <el-row>
-      <el-col :span="6" :offset="1">
-        <el-progress :percentage="onePercentage" :color="oneCustomColors" :format="oneFormat"
+      <el-col :offset="1" :span="6">
+        <el-progress :color="oneCustomColors" :format="oneFormat" :percentage="onePercentage"
                      :stroke-width="3"></el-progress>
       </el-col>
-      <el-col :span="6" :offset="1">
-        <el-progress :percentage="twoPercentage" :color="twoCustomColors" :format="twoFormat"
+      <el-col :offset="1" :span="6">
+        <el-progress :color="twoCustomColors" :format="twoFormat" :percentage="twoPercentage"
                      :stroke-width="3"></el-progress>
       </el-col>
-      <el-col :span="6" :offset="1">
-        <el-progress :percentage="ThreePercentage" :color="ThreeCustomColors" :format="ThreeFormat"
+      <el-col :offset="1" :span="6">
+        <el-progress :color="ThreeCustomColors" :format="ThreeFormat" :percentage="ThreePercentage"
                      :stroke-width="3"></el-progress>
       </el-col>
-      <el-col :span="2" :offset="1" style="line-height: 15px;">
+      <el-col :offset="1" :span="2" style="line-height: 15px;">
         {{ content }}
       </el-col>
     </el-row>

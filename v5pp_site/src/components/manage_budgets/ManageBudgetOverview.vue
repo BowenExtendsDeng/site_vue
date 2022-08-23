@@ -1,8 +1,9 @@
 <template>
   <div>
     <div id="loginpage">
-      <el-descriptions style="background-color:rgb(220, 230, 256);font-weight: bold;" title="我 的 信 息"
-                       direction="vertical" :column="2" border>
+      <el-descriptions :column="2" border
+                       direction="vertical" style="background-color:rgb(220, 230, 256);font-weight: bold;"
+                       title="我 的 信 息">
         <el-descriptions-item label="组 别">{{ teamName }}</el-descriptions-item>
         <el-descriptions-item label="基 地 余 额">{{ budget }}</el-descriptions-item>
       </el-descriptions>
@@ -11,19 +12,19 @@
       <el-table
           :data="tableData"
           style="width: 100%">
-        <el-table-column prop="buyer" label="发起人">
+        <el-table-column label="发起人" prop="buyer">
         </el-table-column>
-        <el-table-column prop="buyTime" label="日期">
+        <el-table-column label="日期" prop="buyTime">
         </el-table-column>
-        <el-table-column prop="remark" label="购买事项">
+        <el-table-column label="购买事项" prop="remark">
         </el-table-column>
-        <el-table-column prop="amount" label="金额">
+        <el-table-column label="金额" prop="amount">
         </el-table-column>
-        <el-table-column prop="isInvoiceElectronicForm" label="是否为电子发票">
+        <el-table-column label="是否为电子发票" prop="isInvoiceElectronicForm">
         </el-table-column>
-        <el-table-column prop="invoicePath" label="电子发票路径">
+        <el-table-column label="电子发票路径" prop="invoicePath">
         </el-table-column>
-        <el-table-column prop="stage" label="采购阶段">
+        <el-table-column label="采购阶段" prop="stage">
         </el-table-column>
       </el-table>
     </div>

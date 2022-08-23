@@ -1,7 +1,6 @@
 <template>
-  <div class="header" id="headline">
-    <img src="../assets/npu.png" alt="">
-    <v-text>足球机器人创新实践基地</v-text>
+  <div id="headline" class="header">
+    <img alt="" src="../assets/v5head.png">
   </div>
 </template>
 
@@ -13,11 +12,9 @@ export default {
 
 <style scoped>
 .header {
-  font-size: 5ex;
-  color: rgb(0, 84, 163);
-  font-family: '华文新魏';
+  font-size: 1ex;
   font-weight: bold;
   text-align: left;
-  margin-top: -20px;
+  background: #e8e4dc;
 }
 </style>

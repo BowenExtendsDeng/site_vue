@@ -1,7 +1,7 @@
 <template>
   <div id="menubar" style="font-weight: bold;">
     <el-menu :default-active="this.$router.path" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-      <el-menu-item index="1" class="list-group-item active" @click="toUserInfo">我 的 信 息</el-menu-item>
+      <el-menu-item class="list-group-item active" index="1" @click="toUserInfo">我 的 信 息</el-menu-item>
       <el-menu-item index="2" @click="toUserPhoneBook">组 员 联 系 方 式</el-menu-item>
       <el-submenu index="3">
         <template slot="title">我 的 经 费</template>
@@ -9,9 +9,9 @@
         <el-menu-item index="3-2" style="font-weight: bold;" @click="toBudgetApplication">经 费 申 请</el-menu-item>
         <el-menu-item index="3-3" style="font-weight: bold;" @click="toUploadFile">发 票 上 传</el-menu-item>
       </el-submenu>
-      <el-menu-item index="4" disabled>我 的 比 赛 日 程</el-menu-item>
+      <el-menu-item disabled index="4">我 的 比 赛 日 程</el-menu-item>
       <el-menu-item index="5">管 理 招 新</el-menu-item>
-      <el-submenu index="6" v-if="role==='vice_captain'">
+      <el-submenu v-if="role==='vice_captain'" index="6">
         <template slot="title">管 理 账 目</template>
         <el-menu-item index="6-1" style="font-weight: bold;" @click="toManageBudgetOverview">概 览</el-menu-item>
         <el-menu-item index="6-2" style="font-weight: bold;" @click="toManageBudgetApplication">经 费 审 批

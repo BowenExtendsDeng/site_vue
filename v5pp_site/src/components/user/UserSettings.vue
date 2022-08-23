@@ -1,17 +1,17 @@
 <template>
   <div>
     <p style="text-align: center;font-weight: bold;color: #23425e;font-size: large">重置密码</p>
-    <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-      <el-form-item style="display: inline-block" label="密码" prop="pass">
-        <el-input style="width: 60ex" type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
+    <el-form ref="ruleForm" :model="ruleForm" :rules="rules" class="demo-ruleForm" label-width="100px" status-icon>
+      <el-form-item label="密码" prop="pass" style="display: inline-block">
+        <el-input v-model="ruleForm.pass" autocomplete="off" style="width: 60ex" type="password"></el-input>
       </el-form-item>
       <br/>
-      <el-form-item style="display: inline-block" label="密码强度">
-        <PasswordStrength style="width: 40ex" :password="ruleForm.pass"></PasswordStrength>
+      <el-form-item label="密码强度" style="display: inline-block">
+        <PasswordStrength :password="ruleForm.pass" style="width: 40ex"></PasswordStrength>
       </el-form-item>
       <br/>
-      <el-form-item style="display: inline-block" label="确认密码" prop="checkPass">
-        <el-input style="width: 60ex" type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
+      <el-form-item label="确认密码" prop="checkPass" style="display: inline-block">
+        <el-input v-model="ruleForm.checkPass" autocomplete="off" style="width: 60ex" type="password"></el-input>
       </el-form-item>
       <br/>
       <el-form-item>
@@ -20,8 +20,8 @@
       </el-form-item>
       <br/>
       <p style="text-align: center;font-weight: bold;color: #23425e;font-size: large">我要退役</p>
-      <el-form-item style="display:inline-block" label="确认退役？" v-if="isDisabled">
-        <el-button type="primary" @click="submitRetirement" :disabled="isDisabled()">确认</el-button>
+      <el-form-item v-if="isDisabled" label="确认退役？" style="display:inline-block">
+        <el-button :disabled="isDisabled()" type="primary" @click="submitRetirement">确认</el-button>
       </el-form-item>
     </el-form>
   </div>

@@ -1,10 +1,10 @@
 <template>
-  <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+  <el-form ref="ruleForm" :model="ruleForm" :rules="rules" class="demo-ruleForm" label-width="100px" status-icon>
     <el-form-item label="密码" prop="pass">
-      <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
+      <el-input v-model="ruleForm.pass" autocomplete="off" type="password"></el-input>
     </el-form-item>
     <el-form-item label="确认密码" prop="checkPass">
-      <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
+      <el-input v-model="ruleForm.checkPass" autocomplete="off" type="password"></el-input>
     </el-form-item>
     <el-form-item label="年龄" prop="age">
       <el-input v-model.number="ruleForm.age"></el-input>

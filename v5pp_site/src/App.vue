@@ -8,7 +8,7 @@
         <router-view></router-view>
       </el-main>
       <el-footer>@2003-2022足球机器人创新实践基地版权所有：<a href="https://beian.miit.gov.cn/"
-                                                             target="_blank">您的备案号</a></el-footer>
+                                              target="_blank">您的备案号</a></el-footer>
     </el-container>
   </div>
 </template>
@@ -31,42 +31,40 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
   color: #2c3e50;
-  margin-top: 50px;
+  background: #e8e4dc;
 }
 
 .el-footer {
-  background-color: #B3C0D1;
+  background-color: #f8e3ca;
   color: #333;
   text-align: center;
-  line-height: 60px;
+  line-height: 4em;
 }
 
 .el-main {
-  background-color: #E9EEF3;
+  background: #e8e4dc;
   color: #333;
   text-align: center;
-  line-height: 60px;
-  height: 85ex;
+  line-height: 1em;
+  height: 60em;
 }
 
 .el-header {
-  background-color: white;
+  background: #e8e4dc;
   color: #333;
   text-align: center;
-  line-height: 50px;
+  margin: 2ex;
 }
 
-body > .el-cont
-ainer {
-  margin-bottom: 50px;
+body > .el-container {
 }
 
 .el-container:nth-child(5) .el-aside,
 .el-container:nth-child(6) .el-aside {
-  line-height: 50px;
+  line-height: 6em;
 }
 
 .el-container:nth-child(7) .el-aside {
-  line-height: 50px;
+  line-height: 6em;
 }
 </style>

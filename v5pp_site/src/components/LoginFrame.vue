@@ -1,24 +1,31 @@
 <template>
-  <div id="loginframe">
-    <v-text class="header">队 员 登 录 通 道</v-text>
-    <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+  <div id="loginframe" class="login_background">
+    <br/><br/><br/><br/><br/><br/>
+    <div class="lg_form">
       <br/>
-      <el-form-item style="display:inline-block" label="用户名" prop="username">
-        <el-input style="width:300px" type="text" v-model="ruleForm.username"></el-input>
-      </el-form-item>
+      <p class="header">队 员 登 录 通 道</p>
+      <el-form ref="ruleForm" :model="ruleForm" :rules="rules" class="demo-ruleForm" label-width="100px" status-icon>
+        <br/>
+        <el-form-item label="用户名" prop="username" style="display:inline-block;">
+          <el-input v-model="ruleForm.username" style="width:300px" type="text"></el-input>
+        </el-form-item>
+        <br/>
+        <el-form-item label="密码" prop="password" style="display:inline-block">
+          <el-input v-model="ruleForm.password" style="width:300px" type="password"></el-input>
+        </el-form-item>
+        <br/>
+        <vCode :show="isShow" @close="onClose" @success="onSuccess"></vCode>
+        <el-form-item style="transform: translateX(-2em)">
+          <el-button type="primary" @click="submit">提交</el-button>
+          <el-button @click="resetForm('ruleForm')">重置</el-button>
+          <el-button @click="toHomePage">返回</el-button>
+        </el-form-item>
+      </el-form>
       <br/>
-      <el-form-item style="display:inline-block" label="密码" prop="password">
-        <el-input style="width:300px" type="password" v-model="ruleForm.password"></el-input>
-      </el-form-item>
-      <br/>
-      <vCode :show="isShow" @success="onSuccess" @close="onClose"></vCode>
-      <el-form-item>
-        <el-button type="primary" @click="submit">提交</el-button>
-        <el-button @click="resetForm('ruleForm')">重置</el-button>
-        <el-button @click="toHomePage">返回</el-button>
-      </el-form-item>
-    </el-form>
-    <br/>
+    </div>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/><br/>
   </div>
 </template>
 
@@ -126,5 +133,29 @@ export default {
   color: rgb(0, 84, 163);
   font-family: '楷体';
   font-weight: bold;
+}
+
+.login_background {
+  background-image: url("../assets/RMUA调车.jpg");
+  max-width: 100%;
+  height: auto;
+  background-size: cover;
+  text-align: center;
+  background-repeat: no-repeat;
+}
+
+.lg_form {
+  max-width: 80ex;
+  background: #b6b6b6;
+  text-align: center;
+  border-radius: 2em;
+  font-weight: bold;
+  font-family: 黑体;
+  opacity: 0.88;
+  transform: translate(32em, 8em);
+}
+
+.el-main {
+  height: 50ex;
 }
 </style>

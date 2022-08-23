@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PptProjector path="department/double" amount="5"></PptProjector>
+    <PptProjector amount="5" path="department/double"></PptProjector>
   </div>
 </template>
 
