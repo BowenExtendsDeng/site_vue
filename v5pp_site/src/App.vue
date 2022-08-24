@@ -8,7 +8,7 @@
         <router-view></router-view>
       </el-main>
       <el-footer>@2003-2022足球机器人创新实践基地版权所有：<a href="https://beian.miit.gov.cn/"
-                                              target="_blank">您的备案号</a></el-footer>
+                                                             target="_blank">您的备案号</a></el-footer>
     </el-container>
   </div>
 </template>
@@ -46,7 +46,7 @@ export default {
   color: #333;
   text-align: center;
   line-height: 1em;
-  height: 60em;
+  height: 61em;
 }
 
 .el-header {

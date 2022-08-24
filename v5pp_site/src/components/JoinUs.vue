@@ -1,6 +1,6 @@
 <template>
   <div class="whole">
-    <br/><br/>
+    <br/>
     <div class="input-group">
       <br/>
       <p style="font-size: 20px">请 填 写 个 人 简 历</p>
@@ -15,10 +15,9 @@
           <el-input v-model="ruleForm.id" style="width: 60ex" type="text"></el-input>
         </el-form-item>
         <br/>
-        <el-form-item label="意向方向：" style="display: inline-block;width: 64ex" prop="intention">
-          <el-radio v-model="ruleForm.intention" label="1">软 件 组</el-radio>
-          <el-radio v-model="ruleForm.intention" label="2">硬 件 组</el-radio>
-          <el-radio v-model="ruleForm.intention" label="3">机 械 组</el-radio>
+        <el-form-item label="选择性别：" style="display: inline-block;width: 64ex" prop="sex">
+          <el-radio v-model="ruleForm.sex" label="1" @click="setSex('男')">{{ '男' }}</el-radio>
+          <el-radio v-model="ruleForm.sex" label="2" @click="setSex('女')">{{ '女' }}</el-radio>
         </el-form-item>
         <br/>
         <el-form-item label="选择届次：" style="display: inline-block;width: 64ex" prop="session">
@@ -26,9 +25,18 @@
           <el-radio v-model="ruleForm.session" label="2" @click="setSession(year)">{{ year }}</el-radio>
         </el-form-item>
         <br/>
-        <el-form-item label="选择性别：" style="display: inline-block;width: 64ex" prop="sex">
-          <el-radio v-model="ruleForm.sex" label="1" @click="setSex('男')">{{ '男' }}</el-radio>
-          <el-radio v-model="ruleForm.sex" label="2" @click="setSex('女')">{{ '女' }}</el-radio>
+        <el-form-item label="所在学院：" prop="college" style="display: inline-block">
+          <el-input v-model="ruleForm.college" style="width: 60ex" type="text"></el-input>
+        </el-form-item>
+        <br/>
+        <el-form-item label="意向方向：" style="display: inline-block;width: 64ex" prop="intention">
+          <el-radio v-model="ruleForm.intention" label="1">软 件 组</el-radio>
+          <el-radio v-model="ruleForm.intention" label="2">硬 件 组</el-radio>
+          <el-radio v-model="ruleForm.intention" label="3">机 械 组</el-radio>
+        </el-form-item>
+        <br/>
+        <el-form-item label="联系QQ号：" prop="qq" style="display: inline-block">
+          <el-input v-model="ruleForm.qq" style="width: 60ex" type="text"></el-input>
         </el-form-item>
         <br/>
         <el-form-item label="联系电话：" style="display: inline-block" prop="telephone">
@@ -58,7 +66,7 @@
       </el-form>
       <br/>
     </div>
-    <br/><br/><br/><br/><br/><br/><br/>
+    <br/>
   </div>
 </template>
 
@@ -78,13 +86,21 @@ export default {
         callback(new Error('真实姓名需要为2-10位汉字，如有标点请省略，请安要求填写'));
       }
     };
+    const validateQq = (rule, value, callback) => {
+      if (value === '') {
+        callback(new Error('请输入自己的QQ号码'));
+      } else {
+        const uPattern = /^[1-9]\d{4,10}$/;
+        if (uPattern.test(value)) {
+          callback();
+        }
+        callback(new Error('请输入有效的QQ号码'));
+      }
+    };
     const validateSex = (rule, value, callback) => {
       if (value === '') {
         callback(new Error('请选择自己的性别'));
       } else {
-        if (this.ruleForm.sex !== '') {
-          this.$refs.ruleForm.validateField('sex');
-        }
         callback();
       }
     };
@@ -103,9 +119,6 @@ export default {
       if (value === 0) {
         callback(new Error('请填写意向组别'));
       } else {
-        if (this.ruleForm.intention !== '') {
-          this.$refs.ruleForm.validateField('intention');
-        }
         callback();
       }
     };
@@ -113,9 +126,6 @@ export default {
       if (value === 0) {
         callback(new Error('请选择自己的届次'));
       } else {
-        if (this.ruleForm.session !== 0) {
-          this.$refs.ruleForm.validateField('session');
-        }
         callback();
       }
     };
@@ -128,6 +138,17 @@ export default {
           callback();
         }
         callback(new Error('请输入有效的邮箱号'));
+      }
+    };
+    const validateCollege = (rule, value, callback) => {
+      if (value === '') {
+        callback(new Error('请输入自己所在的学院名'));
+      } else {
+        const uPattern = /^[\u4E00-\u9FA5]{1,20}$/;
+        if (uPattern.test(value)) {
+          callback();
+        }
+        callback(new Error('请输入有效的学院名'));
       }
     };
     const validateId = (rule, value, callback) => {
@@ -150,8 +171,10 @@ export default {
         id: '',
         session: 0,
         telephone: '',
+        college: '',
         email: '',
         textarea: '',
+        qq: '',
       },
       rules: {
         name: [
@@ -175,6 +198,12 @@ export default {
         sex: [
           {validator: validateSex, trigger: 'blur'}
         ],
+        qq: [
+          {validator: validateQq, trigger: 'blur'}
+        ],
+        college: [
+          {validator: validateCollege, trigger: 'blur'}
+        ]
       }
     };
   },
@@ -182,7 +211,21 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('submit!');
+          this.$axios.post("http://localhost:8849/visitor/insertVisitor", {
+            studentId: this.ruleForm.id,
+            name: this.ruleForm.name,
+            sex: this.ruleForm.sex,
+            session: this.ruleForm.session,
+            telephone: this.ruleForm.telephone,
+            email: this.ruleForm.email,
+            college: this.ruleForm.college,
+            qqId: this.ruleForm.qq,
+            techTeamName: this.ruleForm.intention,
+            selfIntro: this.ruleForm.textarea
+          }).then(successResponse => {
+            console.log(successResponse.data);
+            this.$alert(successResponse.data);
+          });
         } else {
           this.$alert("信息不全或有误，请仔细核对")
           return false;
