@@ -1,13 +1,14 @@
 <template>
   <div id="menubar" style="font-weight: bold">
     <el-menu :default-active="this.$router.path" class="el-menu-demo" mode="horizontal" @select="handleSelect"
-             style="background: #efece8;border-bottom-color:rgb(250,223,200);border-bottom-width: 0.3ex">
-      <el-menu-item index="1" @click="toHomepageIntro" style="float:left;background-color:rgb(248,227,196);">基 地 简 介
+             style="background: #ffeedc;border-bottom-color:rgb(250,223,200);border-bottom-width: 0.3ex">
+      <el-menu-item index="1" @click="toHomepageIntro">基 地 简 介
       </el-menu-item>
-      <el-menu-item index="2" @click="toHomePageCarousel" style="float:left;background-color:rgb(248,227,196);">基 地 新
+      <el-menu-item index="2" @click="toHomePageCarousel">基 地 新
         闻
       </el-menu-item>
-      <el-menu-item index="3" @click="toStructureOverview" style="float:left;background-color:rgb(248,227,196);">组 织 架 构
+      <el-menu-item index="3" @click="toStructureOverview">组 织 架
+        构
         图
       </el-menu-item>
       <!--      <el-submenu index="4">-->
@@ -19,7 +20,7 @@
       <!--        <el-menu-item index="4-5" style="font-weight: bold;" @click="toStandard">标 准 平 台 组</el-menu-item>-->
       <!--        <el-menu-item index="4-6" style="font-weight: bold;" @click="toDouble">创 新 创 业 组</el-menu-item>-->
       <!--      </el-submenu>-->
-      <el-submenu index="5" style="float:left;background-color:rgb(248,227,196);">
+      <el-submenu index="5">
         <template slot="title">技 术 组 简 介</template>
         <el-menu-item index="5-1" style="font-weight: bold;" @click="toVision">软 件 视 觉 组</el-menu-item>
         <el-menu-item index="5-2" style="font-weight: bold;" @click="toNavi">软 件 定 位 导 航 组</el-menu-item>
@@ -27,24 +28,24 @@
         <el-menu-item index="5-4" style="font-weight: bold;" @click="toHardware">硬 件 嵌 入 式 组</el-menu-item>
         <el-menu-item index="5-5" style="font-weight: bold;" @click="toMach">机 械 制 造 组</el-menu-item>
       </el-submenu>
-      <el-submenu index="6" style="float:left;background-color:rgb(248,227,196);">
+      <el-submenu index="6">
         <template slot="title">招 新 考 核</template>
         <el-menu-item disabled index="6-1" style="font-weight: bold;">软 件 组 考 核</el-menu-item>
         <el-menu-item disabled index="6-4" style="font-weight: bold;">硬 件 组 考 核</el-menu-item>
         <el-menu-item disabled index="6-5" style="font-weight: bold;">机 械 组 考 核</el-menu-item>
       </el-submenu>
-      <div style="float:left;background-color:rgb(248,227,196);font-weight: bold;">
-        <el-menu-item index="7" @click="toJoinUs">加 入 我 们</el-menu-item>
-      </div>
-      <div style="float:left;background-color:rgb(248,167,117);font-weight: bold;">
-        <el-menu-item disabled index="8">足 基 文 创 商 城</el-menu-item>
-      </div>
-      <div style="float:right;background-color:rgb(248,227,196);font-weight: bold;">
-        <el-menu-item index="9" @click="toLogin">队 员 登 录</el-menu-item>
-      </div>
-      <div style="float:right;background-color:rgb(248,227,196);font-weight: bold;">
-        <el-menu-item index="10" @click="toAdmissionRegistration">录 取 注 册</el-menu-item>
-      </div>
+      <el-menu-item index="7" @click="toJoinUs">
+        加 入 我 们
+      </el-menu-item>
+      <el-menu-item disabled index="8">足 基 文
+        创 商 城
+      </el-menu-item>
+      <el-menu-item index="9" @click="toLogin" style="float:right;">
+        队 员 登 录
+      </el-menu-item>
+      <el-menu-item index="10" @click="toAdmissionRegistration"
+                    style="float:right;">录 取 注 册
+      </el-menu-item>
     </el-menu>
     <div class="line"></div>
   </div>
@@ -113,4 +114,14 @@ export default {
   }
 }
 </script>
+<style scoped>
+.el-menu-item {
+  background-color: rgb(253, 225, 183);
+  font-weight: bold;
+}
 
+.el-submenu {
+  background-color: rgb(253, 225, 183);
+  font-weight: bold;
+}
+</style>
