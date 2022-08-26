@@ -77,7 +77,7 @@ export default {
   methods: {
     submitForm() {
       this.$axios
-          .post("http://localhost:8849/auth/login", {// 请求后台登陆接口
+          .post(this.$url + "/auth/login", {// 请求后台登陆接口
             username: this.ruleForm.username,
             password: this.ruleForm.password
           }).then(successResponse => {

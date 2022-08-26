@@ -43,7 +43,7 @@ export default {
   mounted() {
     console.log(getCookie("username"))
     this.$axios
-        .post("http://localhost:8849/staff/getStaffById", {
+        .post(this.$url + "/staff/getStaffById", {
               username: getCookie("username")
             }
         ).then(successResponse => {

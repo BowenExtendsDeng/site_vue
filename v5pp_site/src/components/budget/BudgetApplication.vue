@@ -77,7 +77,7 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$axios.post("http://localhost:8849/ledger/addApplication", this.ruleForm).then(response => {
+          this.$axios.post(this.$url + "/ledger/addApplication", this.ruleForm).then(response => {
             if (response.data.code === 0) {
               this.$message({
                 message: "提交成功",

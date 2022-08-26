@@ -34,7 +34,7 @@ export default {
   mounted() {
     axios({
       method: "GET",
-      url: "http://localhost:8849/staff/getAllStaffs",
+      url: this.$url + "/staff/getAllStaffs",
     }).then(response => {
       this.tableData = response.data;
     });

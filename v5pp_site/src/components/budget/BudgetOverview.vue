@@ -35,7 +35,7 @@ export default {
   mounted() {
     console.log(getCookie("username"))
     this.$axios
-        .post("http://localhost:8849/ledger/getByStaffName", {
+        .post(this.$url + "/ledger/getByStaffName", {
               username: getCookie("username")
             }
         ).then(successResponse => {

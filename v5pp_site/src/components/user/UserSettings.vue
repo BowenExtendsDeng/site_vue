@@ -75,7 +75,7 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           this.$axios
-              .post("http://localhost:8849/staff/updatePassword", {
+              .post(this.$url + "/staff/updatePassword", {
                 username: getCookie("username"),
                 password: this.ruleForm.pass
               }).then(response => {
@@ -107,7 +107,7 @@ export default {
           confirmButtonText: '确定',
           callback: () => {
             this.$axios
-                .post("http://localhost:8849/staff/updateRetirement", {
+                .post(this.$url + "/staff/updateRetirement", {
                   username: getCookie("username")
                 }).then(response => {
               if (response.data.code === "200") {

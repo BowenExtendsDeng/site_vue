@@ -211,7 +211,7 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$axios.post("http://localhost:8849/visitor/insertVisitor", {
+          this.$axios.post(this.$url + "/visitor/insertVisitor", {
             studentId: this.ruleForm.id,
             name: this.ruleForm.name,
             sex: this.ruleForm.sex,
